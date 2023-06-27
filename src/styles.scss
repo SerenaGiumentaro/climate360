@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+.p-tabmenu {
+  color: rebeccapurple;
+  background: red;
+}
+.p-tabmenu-nav {
+  color: blue;
+  background: teal !important;
+}
+
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link{
+  color: orange !important;
+  background: yellow !important;
+}
+
+@media screen  and (max-width: 475px){
+
+  p-tabmenu {
+
+    position: fixed;
+    bottom: 0;
+  }
+}
