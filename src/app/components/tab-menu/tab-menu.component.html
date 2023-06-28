@@ -1,1 +1,2 @@
-<p-tabMenu [model]="viewport > 475 ? items : mobileItems"></p-tabMenu>
+<p-tabMenu [model]="viewport > 660 ? items : mobileItems" (activeItemChange)="changeActiveTab($event)" ></p-tabMenu>
+
