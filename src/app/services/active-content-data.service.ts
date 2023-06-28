@@ -26,7 +26,6 @@ export class ActiveContentDataService {
   }
 
   setActiveDataContent(newContent: string) {
-    console.log(newContent);
 
     switch (newContent) {
       case 'Temperature':
@@ -36,12 +35,13 @@ export class ActiveContentDataService {
         this.activeContent.set(this.carbonService.getCarbonDioxideData());
         break;
       case 'Methane':
+        this.activeContent.set(this.methaneService.getMethaneData())
         break;
       case 'Nitrus Oxide':
+        this.activeContent.set(this.nitrusService.getNitrusOxideData())
         break;
       case 'Polar Ice':
-      default:
-        this.activeContent.set({title: 'def', description: 'ffkjfjf'});
+        this.activeContent.set(this.polarIceService.getPolarIceData())
     }
   }
 }

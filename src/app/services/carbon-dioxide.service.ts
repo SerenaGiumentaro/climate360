@@ -10,7 +10,8 @@ export class CarbonDioxideService {
 
   carbonDioxideData: ActiveData = {
     title: 'Carbon Dioxide',
-    description: 'carbon diofv oksonfodjfdmfodbs'
+    description: 'carbon diofv oksonfodjfdmfodbs',
+    palette: ['#00509d', '#ffd500']
   }
 
   getCarbonDioxideData(){

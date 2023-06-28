@@ -13,6 +13,7 @@ export class TemperatureService {
 temperatureData: ActiveData = {
   title : 'Temperature',
   description : 'lorem ipsifd lof oeiv',
+  palette: ['#ef233c', '#edf2f4']
 
 }
   getTemperatureData(){

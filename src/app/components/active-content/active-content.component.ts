@@ -12,11 +12,16 @@ import { TemperatureService } from 'src/app/services/temperature.service';
 export class ActiveContentComponent implements OnInit{
   constructor(private activeContentData: ActiveContentDataService, private temperatureService: TemperatureService) {}
   activeContent! : ActiveData
-
+  root = document.documentElement
 
   activeContentEffect = effect(() => {
 
     this.activeContent = this.activeContentData.getActiveContentData();
+    if(this.activeContent.palette){
+
+      this.root.style.setProperty('--primary', this.activeContent.palette[0])
+      this.root.style.setProperty('--accent', this.activeContent.palette[1])
+    }
   });
   ngOnInit(): void {
     this.activeContent = this.activeContentData.getActiveContentData();

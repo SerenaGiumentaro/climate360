@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
+
+:root{
+  --primary: #ef233c;
+  --accent: #edf2f4;
+}
 .p-tabmenu {
   color: rebeccapurple;
   background: red;
@@ -9,15 +14,13 @@
   background: teal !important;
 }
 
-.p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link{
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
   color: orange !important;
   background: yellow !important;
 }
 
-@media screen  and (max-width: 475px){
-
+@media screen and (max-width: 475px) {
   p-tabmenu {
-
     position: fixed;
     bottom: 0;
   }
