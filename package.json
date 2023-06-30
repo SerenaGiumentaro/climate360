@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
     "angular-plotly.js": "^5.2.1",
+    "plotly.js-basic-dist": "^2.24.2",
     "plotly.js-dist-min": "^2.24.2",
     "primeicons": "^6.0.1",
     "primeng": "^16.0.2",

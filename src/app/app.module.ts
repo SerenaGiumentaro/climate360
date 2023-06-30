@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { TabMenuComponent } from './components/tab-menu/tab-menu.component';
 import { ActiveContentComponent } from './components/active-content/active-content.component';
 import { ChartComponent } from './components/chart/chart.component';
+// Plotly
+import * as Plotly from 'plotly.js-dist-min'
+import { PlotlyModule } from 'angular-plotly.js';
+PlotlyModule.plotlyjs = Plotly
 // primeng
 import { TabMenuModule } from 'primeng/tabmenu';
 
@@ -21,7 +25,8 @@ import { TabMenuModule } from 'primeng/tabmenu';
     BrowserModule,
     AppRoutingModule,
     TabMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    PlotlyModule
   ],
   providers: [],
   bootstrap: [AppComponent]

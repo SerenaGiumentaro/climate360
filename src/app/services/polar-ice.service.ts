@@ -1,20 +1,56 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ActiveData } from 'src/activeData';
+import { ActiveData } from 'src/ActiveDataClass';
+import APIurls from 'src/url';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PolarIceService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  PolarIceData: ActiveData = {
-    title: 'Polar Ice',
-    description: 'dgdsnlgdknlgk oksonfodjfdmfodbs',
-    palette: ['#00b4d8', '#caf0f8']
+
+polarIceData = new ActiveData(
+  'Polar Ice',
+  '#00b4d8',
+  '#caf0f8',
+  'polar ice descriprion',
+  [],
+  [],
+  'Years',
+  'Million square km',
+  ['1979-9','2021-9'],
+  [2,8]
+)
+  getPolarIceData(){
+    this.getPolarIceDataAPI()
+
+    return this.polarIceData
   }
 
-  getPolarIceData(){
-    return this.PolarIceData
+  getPolarIceDataAPI(){
+    this.http.get<any>(`${APIurls.polarIce}`).subscribe({
+      next: res => {
+
+        this.polarIceData.graph.data[0].x = res.arcticData.map((r: {year:number, month: number})=> `${r.year}-${r.month}` )
+        this.polarIceData.graph.data[0].y = res.arcticData.map((r: {area: number})=> r.area )
+        const extent = {
+          x:  res.arcticData.map((r: {year:number, month: number})=> `${r.year}-${r.month}` ),
+          y: res.arcticData.map((r: {extent: number})=> r.extent )
+        }
+        // this.polarIceData.graph.data.push(this.polarIceData.graph.data[0])
+        // console.log(this.polarIceData);
+
+        // if(this.polarIceData.graph.data[1]){
+
+        //   this.polarIceData.graph.data[1].x = extent.x
+        //   this.polarIceData.graph.data[1].y = extent.y
+        // }
+      },
+      error: err => {
+
+      }
+    })
   }
 }

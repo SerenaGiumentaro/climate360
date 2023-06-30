@@ -1,5 +1,5 @@
 import { Component, OnInit, effect, signal } from '@angular/core';
-import { ActiveData } from 'src/activeData';
+import { ActiveData } from 'src/ActiveDataClass';
 
 import { ActiveContentDataService } from 'src/app/services/active-content-data.service';
 import { TemperatureService } from 'src/app/services/temperature.service';

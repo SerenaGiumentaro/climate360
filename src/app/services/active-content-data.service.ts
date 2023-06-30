@@ -4,7 +4,7 @@ import { CarbonDioxideService } from './carbon-dioxide.service';
 import { MethaneService } from './methane.service';
 import { NitrusOxideService } from './nitrus-oxide.service';
 import { PolarIceService } from './polar-ice.service';
-import { ActiveData } from 'src/activeData';
+import { ActiveData } from 'src/ActiveDataClass';
 
 @Injectable({
   providedIn: 'root',
@@ -17,10 +17,7 @@ export class ActiveContentDataService {
     private nitrusService: NitrusOxideService,
     private polarIceService: PolarIceService
   ) {}
-  activeContent = signal<ActiveData>({
-    title: 'Temeprature',
-    description: 'Lorem ispof ifi ksonf',
-  });
+  activeContent = signal<ActiveData>(this.temperatureService.getTemperatureData());
   getActiveContentData() {
     return this.activeContent();
   }

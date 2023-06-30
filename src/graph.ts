@@ -51,11 +51,11 @@ export interface Graph {
     };
     xaxis: {
       title: string;
-      dtick: number | string;
-      range: [];
+      range: any[];
       type: string;
       tickangle: number;
       //facoltativi
+      dtick?: number | string;
       gridcolor?: string;
       griddash: string;
       linecolor?: string;
@@ -66,13 +66,13 @@ export interface Graph {
     };
     yaxis: {
       title: string;
-      dtick: number | string;
-      range: [];
+      range: any[];
       type: string;
       tickangle?: number;
       //facoltativi
+      dtick?: number | string;
       gridcolor?: string;
-      griddash: string;
+      griddash?: string;
       linecolor?: string;
       linewidth?: number;
       tickcolor?: string;
