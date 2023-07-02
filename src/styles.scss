@@ -3,7 +3,7 @@
 
 :root{
   --primary: #ef233c;
-  --accent: #edf2f4;
+  --accent: #fff;
 }
 .p-tabmenu {
   color: rebeccapurple;
@@ -21,7 +21,7 @@
   box-shadow:  0 0 0 0.2rem var(--accent) !important
 }
 
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 660px) {
   p-tabmenu {
     position: fixed;
     bottom: 0;

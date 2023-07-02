@@ -12,8 +12,8 @@ export class NitrusOxideService {
 
   nitrusOxideData = new ActiveData(
     'Nitrus Oxide',
-    '#ffd100',
-    '#333533',
+    '#6774e6',
+    '#fff',
     'nitrus oxide dexfriptmdbodfdnisfs',
     [],
     [],

@@ -40,13 +40,13 @@ export class ActiveData {
             bgcolor: `${primary}50`,
             bordercolor: 'transparent',
             font: {
-              color: accent,
+              color: '#fff',
               family: '',
               size: '',
             },
           },
           mode: 'lines',
-        }
+        },
       ],
       layout: {
         autosize: true,
@@ -71,7 +71,7 @@ export class ActiveData {
           color: primary,
           bgcolor: '#000',
           orientation: 'v',
-          activecolor: accent,
+          activecolor: '#fff',
           add: ['hovercompare', 'togglehover', 'togglespikelines'],
         },
         xaxis: {
@@ -83,7 +83,7 @@ export class ActiveData {
           dtick: xDtick,
           gridcolor: '',
           griddash: '',
-          linecolor: accent,
+          linecolor: '#fff',
           linewidth: 5,
           tickcolor: primary,
           ticklen: 6,
@@ -98,7 +98,7 @@ export class ActiveData {
           dtick: yDtick,
           gridcolor: '',
           griddash: '',
-          linecolor: accent,
+          linecolor: '#fff',
           linewidth: 5,
           tickcolor: primary,
           ticklen: 6,

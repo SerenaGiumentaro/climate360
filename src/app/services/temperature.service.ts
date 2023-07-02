@@ -11,8 +11,8 @@ export class TemperatureService {
 
   temperatureData = new ActiveData(
     'Temperature',
-    '#ef233c',
-    '#edf2f4',
+    '#e8233a',
+    '#fff',
     'description temperatura da modificare',
     [],
     [],
@@ -27,6 +27,7 @@ export class TemperatureService {
     this.getTemperatureDataAPI();
     return this.temperatureData;
   }
+
   getTemperatureDataAPI() {
     this.http.get<any>(`${APIurls.temperature}`).subscribe({
       next: (res) => {
@@ -71,6 +72,6 @@ export class TemperatureService {
           .slice()
           .map((r: { station: any }) => r.station);
       },
-    });
+    })
   }
 }

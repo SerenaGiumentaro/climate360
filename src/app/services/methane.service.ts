@@ -12,8 +12,8 @@ export class MethaneService {
 
   methaneData = new ActiveData(
     'Methane',
-    '#5b3000',
-    '#82a6b1',
+    '#ba5202',
+    '#fff',
     'methane dexcription diofv oksonfodjfdmfodbs',
     [],
     [],

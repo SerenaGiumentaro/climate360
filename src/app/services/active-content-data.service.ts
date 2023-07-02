@@ -21,7 +21,6 @@ export class ActiveContentDataService {
   getActiveContentData() {
     return this.activeContent();
   }
-
   setActiveDataContent(newContent: string) {
 
     switch (newContent) {

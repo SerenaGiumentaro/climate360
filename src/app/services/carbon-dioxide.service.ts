@@ -12,8 +12,8 @@ export class CarbonDioxideService {
 
   carbonDioxideData = new ActiveData(
     'Carbon Dioxide',
-    '#00509d',
-'#ffd500',
+    '#008c8a',
+'#fff',
 'carbon dioxide description',
 [],
 [],

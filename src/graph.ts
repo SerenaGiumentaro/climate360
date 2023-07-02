@@ -1,5 +1,5 @@
 export interface Graph {
-  data: [
+  data:
     {
       x: [];
       y: [];
@@ -21,8 +21,8 @@ export interface Graph {
         };
       };
       mode: string;
-    }
-  ];
+    }[],
+
   layout: {
     autosize: boolean;
     margin: {
