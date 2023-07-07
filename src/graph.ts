@@ -3,6 +3,7 @@ export interface Graph {
     {
       x: string[] | number[];
       y: string[] | number[];
+      name? :string,
       hovertemplate: string;
       type: string;
       line: {

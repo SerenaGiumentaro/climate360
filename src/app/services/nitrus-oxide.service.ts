@@ -33,10 +33,10 @@ export class NitrusOxideService {
             );
           this.nitrusOxideData.graph.data[0].y = res.nitrous
             .slice(1)
-            .map((r: { average: string }) => r.average)
+            .map((r: { average: string }) => r.average);
           return this.nitrusOxideData;
         }),
-        catchError((err: any) =>  throwError(() => err))
+        catchError((err: any) => throwError(() => err))
       );
     });
   }

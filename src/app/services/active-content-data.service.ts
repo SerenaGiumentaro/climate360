@@ -31,45 +31,45 @@ export class ActiveContentDataService {
         this.changePrimaryColor(
           this.temperatureService.temperatureData.primary
         );
-        this.temperatureService
-          .getTemperatureData()
-          .subscribe({
-            next:  (data) => this.activeContent.set(data),
-            error: err => console.error(`Error retrieving Temperature Data: ${err.message}`)
-
-          }
-
-            );
+        this.temperatureService.getTemperatureData().subscribe({
+          next: (data) => this.activeContent.set(data),
+          error: (err) =>
+            console.error(`Error retrieving Temperature Data: ${err.message}`),
+        });
         break;
       case 'Carbon Dioxide':
         this.changePrimaryColor(this.carbonService.carbonDioxideData.primary);
-        this.carbonService
-        .getCarbonDioxideData()
-        .subscribe({
+        this.carbonService.getCarbonDioxideData().subscribe({
           next: (data) => this.activeContent.set(data),
-          error: err => console.error(`Error retrieving Carbon Dioxide Data: ${err.message}`)
-        }
-          );
+          error: (err) =>
+            console.error(
+              `Error retrieving Carbon Dioxide Data: ${err.message}`
+            ),
+        });
         break;
-        case 'Methane':
+      case 'Methane':
         this.changePrimaryColor(this.methaneService.methaneData.primary);
         this.methaneService.getMethaneData().subscribe({
-          next:          data => this.activeContent.set(data),
-          error: err => console.error(`Error retrieving Methane Data: ${err.message}`)
-
-
-        }
-        )
+          next: (data) => this.activeContent.set(data),
+          error: (err) =>
+          console.error(`Error retrieving Methane Data: ${err.message}`),
+        });
         break;
-      case 'Nitrus Oxide':
-        this.methaneService.getMethaneData().subscribe({
-          next: data => this.activeContent.set(data),
-          error: err => console.error(`Error retrieving Nitrus Oxide Data: ${err.message}`)
-        }
-        )
+        case 'Nitrus Oxide':
+        this.changePrimaryColor(this.nitrusService.nitrusOxideData.primary);
+        this.nitrusService.getNitrusOxideData().subscribe({
+          next: (data) => this.activeContent.set(data),
+          error: (err) =>
+          console.error(`Error retrieving Nitrus Oxide Data: ${err.message}`),
+        });
         break;
-      // case 'Polar Ice':
-      //   this.activeContent.set(this.polarIceService.getPolarIceData())
+        case 'Polar Ice':
+        this.changePrimaryColor(this.polarIceService.polarIceData.primary);
+        this.polarIceService.getPolarIceData().subscribe({
+          next: (data) => this.activeContent.set(data),
+          error: (err) =>
+            console.error(`Error retrieving Polar Ice Data: ${err.message}`),
+        });
     }
   }
 

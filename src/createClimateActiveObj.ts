@@ -18,6 +18,7 @@ export default function createClimateActiveObj(
         {
           x: [],
           y: [],
+          
           hovertemplate: `<extra></extra>%{x}<br> ${title}: %{y}`,
           type: 'scatter',
           line: {
@@ -25,7 +26,9 @@ export default function createClimateActiveObj(
             shape: 'spline',
             smoothing: 1.3,
             width: 1,
+
           },
+
           hoverlabel: {
             bgcolor: `${primary}50`,
             bordercolor: 'transparent',
