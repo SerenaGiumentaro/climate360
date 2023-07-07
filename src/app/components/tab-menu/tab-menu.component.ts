@@ -33,6 +33,8 @@ export class TabMenuComponent implements OnInit {
   }
   ngOnInit(): void {}
   changeActiveTab(event: any) {
+    console.log(this.activeDataContent.activeContent);
+
     this.activeDataContent.setActiveDataContent(event.target);
   }
 }

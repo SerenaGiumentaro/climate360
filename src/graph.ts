@@ -1,8 +1,8 @@
 export interface Graph {
   data:
     {
-      x: [];
-      y: [];
+      x: string[] | number[];
+      y: string[] | number[];
       hovertemplate: string;
       type: string;
       line: {

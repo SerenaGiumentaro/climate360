@@ -1,10 +1,10 @@
-import { Injectable, effect, signal } from '@angular/core';
+import { Injectable, effect, signal, OnInit } from '@angular/core';
 import { TemperatureService } from './temperature.service';
 import { CarbonDioxideService } from './carbon-dioxide.service';
 import { MethaneService } from './methane.service';
 import { NitrusOxideService } from './nitrus-oxide.service';
 import { PolarIceService } from './polar-ice.service';
-import { ActiveData } from 'src/ActiveDataClass';
+import { ClimateActiveData } from 'src/ClimateActiveData';
 
 @Injectable({
   providedIn: 'root',
@@ -17,27 +17,63 @@ export class ActiveContentDataService {
     private nitrusService: NitrusOxideService,
     private polarIceService: PolarIceService
   ) {}
-  activeContent = signal<ActiveData>(this.temperatureService.getTemperatureData());
+  root = document.documentElement;
+
+  activeContent = signal<ClimateActiveData>(
+    this.temperatureService.temperatureData
+  );
   getActiveContentData() {
     return this.activeContent();
   }
   setActiveDataContent(newContent: string) {
-
     switch (newContent) {
       case 'Temperature':
-        this.activeContent.set(this.temperatureService.getTemperatureData());
+        this.changePrimaryColor(
+          this.temperatureService.temperatureData.primary
+        );
+        this.temperatureService
+          .getTemperatureData()
+          .subscribe({
+            next:  (data) => this.activeContent.set(data),
+            error: err => console.error(`Error retrieving Temperature Data: ${err.message}`)
+
+          }
+
+            );
         break;
       case 'Carbon Dioxide':
-        this.activeContent.set(this.carbonService.getCarbonDioxideData());
+        this.changePrimaryColor(this.carbonService.carbonDioxideData.primary);
+        this.carbonService
+        .getCarbonDioxideData()
+        .subscribe({
+          next: (data) => this.activeContent.set(data),
+          error: err => console.error(`Error retrieving Carbon Dioxide Data: ${err.message}`)
+        }
+          );
         break;
-      case 'Methane':
-        this.activeContent.set(this.methaneService.getMethaneData())
+        case 'Methane':
+        this.changePrimaryColor(this.methaneService.methaneData.primary);
+        this.methaneService.getMethaneData().subscribe({
+          next:          data => this.activeContent.set(data),
+          error: err => console.error(`Error retrieving Methane Data: ${err.message}`)
+
+
+        }
+        )
         break;
       case 'Nitrus Oxide':
-        this.activeContent.set(this.nitrusService.getNitrusOxideData())
+        this.methaneService.getMethaneData().subscribe({
+          next: data => this.activeContent.set(data),
+          error: err => console.error(`Error retrieving Nitrus Oxide Data: ${err.message}`)
+        }
+        )
         break;
-      case 'Polar Ice':
-        this.activeContent.set(this.polarIceService.getPolarIceData())
+      // case 'Polar Ice':
+      //   this.activeContent.set(this.polarIceService.getPolarIceData())
     }
+  }
+
+  changePrimaryColor(primary: string) {
+    this.root.style.setProperty('--primary', primary);
   }
 }

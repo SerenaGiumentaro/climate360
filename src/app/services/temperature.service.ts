@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ActiveData } from 'src/ActiveDataClass';
+import { Observable, catchError, defer, map, throwError } from 'rxjs';
+import { ClimateActiveData } from 'src/ClimateActiveData';
+import TemperatureResponse from 'src/ResponseAPI';
+import createClimateActiveObj from 'src/createClimateActiveObj';
 import APIurls from 'src/url';
 
 @Injectable({
@@ -9,29 +12,20 @@ import APIurls from 'src/url';
 export class TemperatureService {
   constructor(private http: HttpClient) {}
 
-  temperatureData = new ActiveData(
+  temperatureData: ClimateActiveData = createClimateActiveObj(
     'Temperature',
+    'temperaature description',
     '#e8233a',
-    '#fff',
-    'description temperatura da modificare',
-    [],
-    [],
-    'Years',
+    'Year',
     'Celsius',
     ['1880', '2024'],
-    [-1.5, 2],
-    5
+    [-1.5, 2]
   );
-
-  getTemperatureData() {
-    this.getTemperatureDataAPI();
-    return this.temperatureData;
-  }
-
-  getTemperatureDataAPI() {
-    this.http.get<any>(`${APIurls.temperature}`).subscribe({
-      next: (res) => {
-        this.temperatureData.graph.data[0].x = res.result
+  getTemperatureData() :Observable<ClimateActiveData>{
+    return defer(() => {
+      return this.getTemperatureDataAPI().pipe(
+        map((res:TemperatureResponse) => {
+          this.temperatureData.graph.data[0].x = res.result
           .slice()
           .map((r: { time: string }) => {
             const monthString = r.time.slice(-2);
@@ -65,13 +59,20 @@ export class TemperatureService {
                   return '00';
               }
             })();
-            //  return  `${r.time.slice(0,4)}-${month}`
-            return `${r.time.slice(0, 4)}`;
+             return  `${r.time.slice(0,4)}-${month}`
           });
         this.temperatureData.graph.data[0].y = res.result
           .slice()
           .map((r: { station: any }) => r.station);
-      },
+          return this.temperatureData
+        }),
+        catchError((err) => throwError(() => err))
+
+      )
     })
+  }
+
+  getTemperatureDataAPI() :Observable<TemperatureResponse>{
+    return this.http.get<TemperatureResponse>(`${APIurls.temperature}`)
   }
 }

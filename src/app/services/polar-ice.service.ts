@@ -9,18 +9,21 @@ import APIurls from 'src/url';
 export class PolarIceService {
   constructor(private http: HttpClient) {}
 
-  polarIceData = new ActiveData(
-    'Polar Ice',
-    '#0093b0',
-    '#fff',
-    'polar ice descriprion',
-    [],
-    [],
-    'Years',
-    'Million square km',
-    ['1979-9', '2021-9'],
-    [2, 8]
-  );
+  
+  // polarIceData = new ActiveData(
+  //   'Polar Ice',
+  //   '#0093b0',
+  //   '#fff',
+  //   'polar ice descriprion',
+  //   [],
+  //   [],
+  //   'Years',
+  //   'Million square km',
+  //   ['1979-9', '2021-9'],
+  //   [2, 8]
+  // );
+
+
   getPolarIceData() {
     this.getPolarIceDataAPI();
     return this.polarIceData;
