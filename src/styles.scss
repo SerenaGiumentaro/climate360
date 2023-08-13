@@ -1,26 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
 
+$itemsNumber : 5;
 :root{
-  --primary: #ef233c;
+  --primary: #e8233a;
   --accent: #fff;
 }
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .p-tabmenu-nav {
-  background: teal !important;
+  margin-top: .5rem !important;
+}
+.p-progress-spinner-circle {
+stroke: var(--primary) !important;
+position: absolute;
+bottom: 0;
+}
+.loading-spinner {
+  position: fixed !important;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 20%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+}
+.loading-spinner:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.53);
 }
 
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
   color: var(--accent) !important;
   background: var(--primary) !important;
+  border-color: #fff !important;
 }
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link:not(.p-disabled):focus {
   box-shadow:  0 0 0 0.2rem var(--accent) !important
 }
+.p-tabmenuitem a{
+  width: calc(100vw / #{$itemsNumber});
+}
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link{
+  border-top-right-radius: 2rem !important;
+}
 
 @media screen and (max-width: 660px) {
   p-tabmenu {
-    position: fixed;
-    bottom: 0;
+    // position: fixed;
+    // bottom: 0;
   }
 }

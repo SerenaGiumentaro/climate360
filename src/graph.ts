@@ -25,6 +25,12 @@ export interface Graph {
     }[],
 
   layout: {
+    legend?: {
+      x?: number,
+      y?: number,
+      xanchor?: string,
+      yanchor?: string
+    },
     autosize: boolean;
     margin: {
       l: number;

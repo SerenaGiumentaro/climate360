@@ -18,21 +18,30 @@ export class ActiveContentDataService {
     private polarIceService: PolarIceService
   ) {}
   root = document.documentElement;
-
   activeContent = signal<ClimateActiveData>(
     this.temperatureService.temperatureData
   );
+  isLoading = signal<boolean>(false);
+
+  getIsLoading() {
+    return this.isLoading();
+  }
   getActiveContentData() {
     return this.activeContent();
   }
   setActiveDataContent(newContent: string) {
+    this.isLoading.set(true);
     switch (newContent) {
       case 'Temperature':
         this.changePrimaryColor(
           this.temperatureService.temperatureData.primary
         );
         this.temperatureService.getTemperatureData().subscribe({
-          next: (data) => this.activeContent.set(data),
+          next: (data) => {
+            this.isLoading.set(false);
+            this.activeContent.set(data);
+          },
+
           error: (err) =>
             console.error(`Error retrieving Temperature Data: ${err.message}`),
         });
@@ -40,7 +49,10 @@ export class ActiveContentDataService {
       case 'Carbon Dioxide':
         this.changePrimaryColor(this.carbonService.carbonDioxideData.primary);
         this.carbonService.getCarbonDioxideData().subscribe({
-          next: (data) => this.activeContent.set(data),
+          next: (data) => {
+            this.isLoading.set(false);
+            this.activeContent.set(data);
+          },
           error: (err) =>
             console.error(
               `Error retrieving Carbon Dioxide Data: ${err.message}`
@@ -50,23 +62,32 @@ export class ActiveContentDataService {
       case 'Methane':
         this.changePrimaryColor(this.methaneService.methaneData.primary);
         this.methaneService.getMethaneData().subscribe({
-          next: (data) => this.activeContent.set(data),
+          next: (data) => {
+            this.isLoading.set(false);
+            this.activeContent.set(data);
+          },
           error: (err) =>
-          console.error(`Error retrieving Methane Data: ${err.message}`),
+            console.error(`Error retrieving Methane Data: ${err.message}`),
         });
         break;
-        case 'Nitrus Oxide':
+      case 'Nitrus Oxide':
         this.changePrimaryColor(this.nitrusService.nitrusOxideData.primary);
         this.nitrusService.getNitrusOxideData().subscribe({
-          next: (data) => this.activeContent.set(data),
+          next: (data) => {
+            this.isLoading.set(false);
+            this.activeContent.set(data);
+          },
           error: (err) =>
-          console.error(`Error retrieving Nitrus Oxide Data: ${err.message}`),
+            console.error(`Error retrieving Nitrus Oxide Data: ${err.message}`),
         });
         break;
-        case 'Polar Ice':
+      case 'Polar Ice':
         this.changePrimaryColor(this.polarIceService.polarIceData.primary);
         this.polarIceService.getPolarIceData().subscribe({
-          next: (data) => this.activeContent.set(data),
+          next: (data) => {
+            this.isLoading.set(false);
+            this.activeContent.set(data);
+          },
           error: (err) =>
             console.error(`Error retrieving Polar Ice Data: ${err.message}`),
         });

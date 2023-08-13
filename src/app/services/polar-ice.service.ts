@@ -22,8 +22,8 @@ export class PolarIceService {
     [2, 8]
   );
   twoLinesPolarIceGraphData = [
-    {...this.polarIceData.graph.data[0]},
-    {...this.polarIceData.graph.data[0]}
+    { ...this.polarIceData.graph.data[0] },
+    { ...this.polarIceData.graph.data[0] },
   ];
 
   getPolarIceData(): Observable<ClimateActiveData> {
@@ -50,11 +50,9 @@ export class PolarIceService {
             shape: 'spline',
             smoothing: 1.3,
             width: 1,
-
-          }
-          this.twoLinesPolarIceGraphData[0].name = 'area'
-          this.twoLinesPolarIceGraphData[1].name = 'extent'
-
+          };
+          this.twoLinesPolarIceGraphData[0].name = 'area';
+          this.twoLinesPolarIceGraphData[1].name = 'extent';
 
           this.polarIceData.graph.data = this.twoLinesPolarIceGraphData;
           console.log(this.polarIceData);

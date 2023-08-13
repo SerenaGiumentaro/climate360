@@ -1,7 +1,16 @@
-<div class="active-content">
-
-  <h1> {{activeClimateInfo.title}} </h1>
-  <p> {{activeClimateInfo.description}} </p>
+<div class="active-content" *ngIf="!isLoading">
+  <div class="info">
+    <h1>{{ activeClimateInfo.title }}</h1>
+    <p>{{ activeClimateInfo.description }}</p>
+  </div>
   <app-chart></app-chart>
+</div>
 
+<div *ngIf="isLoading" class="loader">
+  <p-progressSpinner
+    styleClass="loading-spinner"
+    strokeWidth="4"
+    fill="var(--surface-ground)"
+    animationDuration=".5s"
+  ></p-progressSpinner>
 </div>

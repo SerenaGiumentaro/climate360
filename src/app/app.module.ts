@@ -13,6 +13,8 @@ PlotlyModule.plotlyjs = Plotly
 // primeng
 import { TabMenuModule } from 'primeng/tabmenu';
 import { ClimateInfoPageComponent } from './components/climate-info-page/climate-info-page.component';
+import { SkeletonModule } from 'primeng/skeleton';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ClimateInfoPageComponent } from './components/climate-info-page/climate
     AppRoutingModule,
     TabMenuModule,
     HttpClientModule,
-    PlotlyModule
+    PlotlyModule,
+    SkeletonModule,
+    ProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
