@@ -26,7 +26,6 @@ export default function createClimateActiveObj(
             smoothing: 1.3,
             width: 1,
           },
-
           hoverlabel: {
             bgcolor: `${primary}50`,
             bordercolor: 'transparent',
@@ -67,7 +66,7 @@ export default function createClimateActiveObj(
         modebar: {
           color: primary,
           bgcolor: '#323232',
-          orientation: 'v',
+          orientation: 'h',
           activecolor: '#fff',
           add: ['hovercompare', 'togglehover', 'togglespikelines'],
         },

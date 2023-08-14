@@ -55,7 +55,6 @@ export class PolarIceService {
           this.twoLinesPolarIceGraphData[1].name = 'extent';
 
           this.polarIceData.graph.data = this.twoLinesPolarIceGraphData;
-          console.log(this.polarIceData);
 
           return this.polarIceData;
         }),
