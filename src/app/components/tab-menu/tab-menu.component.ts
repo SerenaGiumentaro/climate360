@@ -31,8 +31,8 @@ export class TabMenuComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onWindowResize(event: any) {
     this.viewport = innerWidth;
-    this.activeDataContent.setActiveDataContent('Temperature');
-    this.activeItem = this.viewport > 660 ? this.items[0] : this.mobileItems[0];
+    //this.activeDataContent.setActiveDataContent('Temperature');
+    //this.activeItem = this.viewport > 660 ? this.items[0] : this.mobileItems[0];
   }
   ngOnInit(): void {
     this.activeItem = this.viewport > 660 ? this.items[0] : this.mobileItems[0];
