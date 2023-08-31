@@ -93,6 +93,7 @@ export class ActiveContentDataService {
         });
     }
   }
+  
 
   changePrimaryColor(primary: string) {
     this.root.style.setProperty('--primary', primary);

@@ -23,6 +23,8 @@ export class TabMenuComponent implements OnInit {
     { label: 'No2', target: 'Nitrus Oxide' },
     { label: '', icon: 'fa-regular fa-snowflake', target: 'Polar Ice' },
   ];
+  //a cosa serve? itemsignal
+  activeItem!: MenuItem;
   itemsSignal = signal(this.items);
   viewport = window.innerWidth;
 
@@ -30,9 +32,13 @@ export class TabMenuComponent implements OnInit {
   onWindowResize(event: any) {
     this.viewport = innerWidth;
     this.activeDataContent.setActiveDataContent('Temperature');
+    this.activeItem = this.viewport > 660 ? this.items[0] : this.mobileItems[0];
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.activeItem = this.viewport > 660 ? this.items[0] : this.mobileItems[0];
+  }
   changeActiveTab(event: any) {
     this.activeDataContent.setActiveDataContent(event.target);
+    this.activeItem = event
   }
 }
