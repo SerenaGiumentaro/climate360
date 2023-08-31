@@ -13,7 +13,24 @@ export class NitrusOxideService {
   constructor(private http: HttpClient) {}
   nitrusOxideData: ClimateActiveData = createClimateActiveObj(
     'Nitrus Oxide',
-    `Nitrous oxide, commonly known as laughing gas, is another critical player in the global warming scenario, albeit less discussed than carbon dioxide and methane. Despite its lower concentration in the atmosphere, nitrous oxide is approximately 300 times more potent as a greenhouse gas than carbon dioxide over a century. Originating from both natural sources, like soil and water, and human activities, such as agriculture, industrial processes, and the burning of fossil fuels, nitrous oxide has a dual detrimental effect on our environment. Not only does it trap heat and contribute to the greenhouse effect, but it also plays a role in the depletion of the stratospheric ozone layer, which protects life on Earth from the sun's harmful ultraviolet radiation. The increasing levels of nitrous oxide have been linked to more frequent and severe weather events, rising sea levels, and disruptions in marine and terrestrial ecosystems. For instance, the acidification and warming of oceans can lead to loss of biodiversity and reduced fish stocks, impacting food security for millions. Addressing nitrous oxide emissions requires a holistic approach, focusing on sustainable agricultural practices, industrial reforms, and global cooperation to safeguard our planet's future.`,
+    `Nitrous oxide, commonly known as laughing gas, is another critical player
+     in the global warming scenario, albeit less discussed than carbon dioxide and methane.
+      Despite its lower concentration in the atmosphere, nitrous oxide is approximately 300
+       times more potent as a greenhouse gas than carbon dioxide over a century.
+       <br><br>Originating from both natural sources, like soil and water,
+       and human activities, such as agriculture, industrial processes,
+       and the burning of fossil fuels, nitrous oxide has a dual detrimental effect on
+       our environment. Not only does it trap heat and contribute to the greenhouse effect,
+       but it also plays a role in the depletion of the stratospheric ozone layer,
+       which protects life on Earth from the sun's harmful ultraviolet radiation.
+       <br><br>The increasing levels of nitrous oxide have been linked to more frequent and
+       severe weather events, rising sea levels, and disruptions in marine and terrestrial
+       ecosystems.
+       <br><br>For instance, the acidification and warming of oceans can lead to loss of
+       biodiversity and reduced fish stocks, impacting food security for millions.
+       Addressing nitrous oxide emissions requires a holistic approach, focusing on
+       sustainable agricultural practices, industrial reforms, and global cooperation
+       to safeguard our planet's future.`,
     '#6774e6',
     'Year',
     'Nitrus Oxide mole fraction (ppb)',

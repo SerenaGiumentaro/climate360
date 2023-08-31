@@ -1,7 +1,7 @@
 <div class="active-content" *ngIf="!isLoading">
   <div class="info">
     <h1>{{ activeClimateInfo.title }}</h1>
-    <p>{{ activeClimateInfo.description }}</p>
+    <p [innerHTML]="activeClimateInfo.description"></p>
   </div>
   <app-chart></app-chart>
 </div>

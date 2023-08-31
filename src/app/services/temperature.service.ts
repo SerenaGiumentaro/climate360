@@ -14,7 +14,7 @@ export class TemperatureService {
 
   temperatureData: ClimateActiveData = createClimateActiveObj(
     'Temperature',
-    `Global warming refers to the ongoing increase in Earth's average atmospheric and oceanic temperatures. This warming trend is largely attributed to human activities, particularly the burning of fossil fuels, which release vast amounts of carbon dioxide (CO2) and other greenhouse gases into the atmosphere. These gases intensify the natural greenhouse effect, leading to a rise in global temperatures. Consequences include the melting of glaciers and polar ice caps, increased frequency of extreme weather events, and shifts in climate zones. To address this, global efforts to reduce greenhouse gas emissions and transition to renewable energy sources are essential.`,
+    `Global warming refers to the ongoing increase in Earth's average atmospheric and oceanic temperatures. This warming trend is largely attributed to human activities, particularly the burning of fossil fuels, which release vast amounts of carbon dioxide (CO2) and other greenhouse gases into the atmosphere. <br><br>These gases intensify the natural greenhouse effect, leading to a rise in global temperatures. Consequences include the melting of glaciers and polar ice caps, increased frequency of extreme weather events, and shifts in climate zones. To address this, global efforts to reduce greenhouse gas emissions and transition to renewable energy sources are essential.`,
     '#e8233a',
     'Year',
     'Celsius',
