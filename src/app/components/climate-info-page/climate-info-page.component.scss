@@ -3,10 +3,17 @@
   color: var(--accent);
 }
 .info{
-  padding: 0 2rem;
+  padding: 0 5rem;
   padding-bottom: 2rem;
 
 }
+.info p{
+  font-size: 1.4rem;
+}
 h1{
   padding: 1rem 0;
+}
+
+app-chart{
+  padding: 5rem;
 }
