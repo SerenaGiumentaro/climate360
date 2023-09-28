@@ -3,8 +3,7 @@
   color: var(--accent);
 }
 .info{
-  padding: 0 5rem;
-  padding-bottom: 2rem;
+  padding: 2rem 5rem;
 
 }
 .info p{
@@ -17,7 +16,6 @@ h1{
 
 @media screen and (max-width: 660px) {
   .info{
-    padding: 0 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem;
   }
 }

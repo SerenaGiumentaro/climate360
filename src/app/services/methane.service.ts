@@ -13,21 +13,21 @@ export class MethaneService {
   constructor(private http: HttpClient) {}
   methaneData: ClimateActiveData = createClimateActiveObj(
     'Methane',
-    `Methane, is a potent greenhouse gas that significantly contributes to global warming.
-     Its warming potential is over 25 times greater than CO2 over a 100-year period.
-     Produced by natural sources like wetlands, as well as human activities such as livestock
-      digestion, rice cultivation, and fossil fuel extraction, methane's rise in the
-      atmosphere exacerbates the greenhouse effect. As the Earth warms,
-      permafrost regions begin to thaw, releasing trapped methane and creating
-      a dangerous feedback loop of increasing temperatures.
-      <br><br>This not only accelerates the melting of polar ice caps and the rise
-      of sea levels but also leads to more extreme weather events, from intense
-      heatwaves to heavy rainfall and flooding. Marine ecosystems, too, are affected,
-      with warmer waters threatening coral reefs and the species that rely on them.
-      <br><br>The socio-economic consequences are vast, with communities facing threats to
-       their homes, livelihoods, and food sources. Addressing the methane challenge is imperative,
-        necessitating global efforts to reduce emissions from both natural and anthropogenic
-        sources.`,
+    `Methane, often referred to as CH4, is a potent greenhouse gas that significantly contributes to global warming and climate change.
+    <br><br>
+    This gas is released into the atmosphere through various natural processes, including the decomposition of organic matter in wetlands and the digestive processes of certain animals. However, human activities are also a major source of methane emissions. Activities such as the production and transportation of fossil fuels, livestock farming, and the decomposition of organic waste in landfills all release methane into the air.
+    <br><br>
+    Methane is a particularly powerful greenhouse gas, capable of trapping heat from the sun over 25 times more effectively than carbon dioxide over a 100-year period. Despite being present in smaller quantities compared to carbon dioxide, methane's heat-trapping ability makes it a significant driver of global warming.
+    <br><br>
+    The consequences of elevated methane levels in the atmosphere are alarming. Increasing methane concentrations lead to a more rapid and intense warming effect, contributing to the overall rise in global temperatures. This can result in the thawing of permafrost, which further releases stored methane and accelerates the feedback loop of climate change.
+    <br><br>
+    Moreover, methane emissions contribute to air pollution, which has adverse health effects on humans and other living organisms. Additionally, they can lead to the formation of ground-level ozone, a harmful air pollutant.
+    <br><br>
+    Addressing methane emissions is a critical aspect of mitigating global warming. Efforts to reduce methane emissions include improving methane capture and control systems in the oil and gas industry, implementing sustainable agricultural practices, and reducing organic waste in landfills through recycling and composting.
+    <br><br>
+    International cooperation is essential in tackling the global challenge of methane emissions. Agreements and initiatives aimed at reducing methane emissions, both on a national and international scale, are crucial steps in mitigating the impact of this potent greenhouse gas.
+    <br><br>
+    In conclusion, methane is a significant contributor to global warming, and understanding its sources and effects is essential in our collective efforts to combat climate change. By taking meaningful actions to reduce methane emissions, we can work towards a more sustainable and secure future for our planet and future generations.`,
     '#ba5202',
     'Year',
     'Part Per million (ppm)',
@@ -39,7 +39,7 @@ export class MethaneService {
     return defer(() => {
       return this.getMethaneDataAPI().pipe(
         map((res: MethaneResponse) => {
-         
+
           this.methaneData.graph.data[0].x = res.methane
             .slice(1)
             .map(

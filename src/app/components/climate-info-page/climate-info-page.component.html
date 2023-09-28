@@ -1,10 +1,10 @@
 <div class="active-content" *ngIf="!isLoading" [@fadeInOut]>
   <app-logo-container></app-logo-container>
+  <app-chart></app-chart>
   <div class="info">
     <h1>{{ activeClimateInfo.title }}</h1>
     <p [innerHTML]="activeClimateInfo.description"></p>
   </div>
-  <app-chart></app-chart>
 </div>
 
 <div *ngIf="isLoading" class="loader">

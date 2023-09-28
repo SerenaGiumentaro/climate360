@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, defer, map, throwError } from 'rxjs';
-import { ActiveData } from 'src/ActiveDataClass';
 import { ClimateActiveData } from 'src/ClimateActiveData';
 import createClimateActiveObj from 'src/createClimateActiveObj';
 import PolarIceResponse from 'src/ResponseAPI';

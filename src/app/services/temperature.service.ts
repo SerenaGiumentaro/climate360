@@ -14,7 +14,21 @@ export class TemperatureService {
 
   temperatureData: ClimateActiveData = createClimateActiveObj(
     'Temperature',
-    `Global warming refers to the ongoing increase in Earth's average atmospheric and oceanic temperatures. This warming trend is largely attributed to human activities, particularly the burning of fossil fuels, which release vast amounts of carbon dioxide (CO2) and other greenhouse gases into the atmosphere. <br><br>These gases intensify the natural greenhouse effect, leading to a rise in global temperatures. Consequences include the melting of glaciers and polar ice caps, increased frequency of extreme weather events, and shifts in climate zones. To address this, global efforts to reduce greenhouse gas emissions and transition to renewable energy sources are essential.`,
+    `Global warming is a critical environmental challenge that demands our immediate attention. It refers to the steady increase in the Earth's average surface temperature, primarily driven by human activities. The main culprit behind this phenomenon is the emission of greenhouse gases into our atmosphere.
+    <br><br>
+    These greenhouse gases, including carbon dioxide, methane, and nitrous oxide, act as a thermal blanket, trapping heat from the sun and causing the planet's temperature to rise. This temperature increase has severe and far-reaching consequences for our world.
+    <br><br>
+    One of the most evident effects is the ongoing rise in global temperatures, leading to more frequent and intense heatwaves. Moreover, it has contributed to the melting of polar ice caps and glaciers, leading to a rise in sea levels. This rising sea level poses a significant threat to coastal regions worldwide.
+    <br><br>
+    Global warming is also linked to an increase in extreme weather events, including hurricanes, droughts, wildfires, and intense storms. These events have devastating effects on communities and ecosystems.
+    <br><br>
+    Furthermore, the changing climate disrupts ecosystems and threatens countless plant and animal species. Many face habitat loss and are at risk of extinction.
+    <br><br>
+    Addressing global warming is a collective responsibility. To mitigate its impact, we must reduce our carbon emissions. This involves transitioning to cleaner and renewable energy sources, enhancing energy efficiency in all sectors, and adopting sustainable transportation alternatives.
+    <br><br>
+    Afforestation and reforestation efforts can help capture carbon dioxide from the atmosphere, further assisting in the fight against global warming. International cooperation, as exemplified by global agreements such as the Paris Agreement, plays a vital role in uniting nations to combat this global issue.
+    <br><br>
+    In conclusion, global warming is an urgent and complex challenge that affects us all. By comprehending its causes and effects and taking meaningful actions to reduce our carbon footprint, we can collectively work towards a more sustainable and secure future for generations to come. Our planet's health and the well-being of future generations depend on our commitment to addressing this critical issue.`,
     '#e8233a',
     'Year',
     'Celsius',
