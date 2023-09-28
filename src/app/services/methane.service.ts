@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, defer, map, Observable, throwError } from 'rxjs';
-import { ClimateActiveData } from 'src/ClimateActiveData';
+import { ClimateActiveData } from 'src/types/ClimateActiveData';
 import createClimateActiveObj from 'src/createClimateActiveObj';
-import MethaneResponse from 'src/ResponseAPI';
+import MethaneResponse from 'src/types/ResponseAPI';
 import APIurls from 'src/url';
 
 @Injectable({
@@ -39,7 +39,6 @@ export class MethaneService {
     return defer(() => {
       return this.getMethaneDataAPI().pipe(
         map((res: MethaneResponse) => {
-
           this.methaneData.graph.data[0].x = res.methane
             .slice(1)
             .map(

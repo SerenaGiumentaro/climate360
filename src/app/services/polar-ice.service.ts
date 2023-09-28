@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, defer, map, throwError } from 'rxjs';
-import { ClimateActiveData } from 'src/ClimateActiveData';
+import { ClimateActiveData } from 'src/types/ClimateActiveData';
 import createClimateActiveObj from 'src/createClimateActiveObj';
-import PolarIceResponse from 'src/ResponseAPI';
+import PolarIceResponse from 'src/types/ResponseAPI';
 import APIurls from 'src/url';
 
 @Injectable({

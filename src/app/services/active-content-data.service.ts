@@ -1,10 +1,10 @@
-import { Injectable, effect, signal, OnInit } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { TemperatureService } from './temperature.service';
 import { CarbonDioxideService } from './carbon-dioxide.service';
 import { MethaneService } from './methane.service';
 import { NitrusOxideService } from './nitrus-oxide.service';
 import { PolarIceService } from './polar-ice.service';
-import { ClimateActiveData } from 'src/ClimateActiveData';
+import { ClimateActiveData } from 'src/types/ClimateActiveData';
 
 @Injectable({
   providedIn: 'root',
@@ -93,7 +93,6 @@ export class ActiveContentDataService {
         });
     }
   }
-  
 
   changePrimaryColor(primary: string) {
     this.root.style.setProperty('--primary', primary);

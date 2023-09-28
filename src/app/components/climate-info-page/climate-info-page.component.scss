@@ -2,20 +2,18 @@
   background-color: var(--primary);
   color: var(--accent);
 }
-.info{
+.info {
   padding: 2rem 5rem;
-
 }
-.info p{
+.info p {
   font-size: 1.4rem;
 }
-h1{
+h1 {
   padding: 1rem 0;
 }
 
-
 @media screen and (max-width: 660px) {
-  .info{
+  .info {
     padding: 2rem;
   }
 }

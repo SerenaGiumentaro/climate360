@@ -1,6 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit, effect, signal } from '@angular/core';
-import { ClimateActiveData } from 'src/ClimateActiveData';
+import { ClimateActiveData } from 'src/types/ClimateActiveData';
 import { ActiveContentDataService } from 'src/app/services/active-content-data.service';
 import { TemperatureService } from 'src/app/services/temperature.service';
 
@@ -11,14 +11,12 @@ import { TemperatureService } from 'src/app/services/temperature.service';
   animations: [
     trigger('fadeInOut', [
       transition(':enter', [
-        style({opacity: 0}),
-        animate('800ms', style({opacity: 1}))
+        style({ opacity: 0 }),
+        animate('800ms', style({ opacity: 1 })),
       ]),
-      transition(':leave', [
-        animate('50ms', style({ opacity: 0 })),
-      ]),
-    ])
-  ]
+      transition(':leave', [animate('50ms', style({ opacity: 0 }))]),
+    ]),
+  ],
 })
 export class ClimateInfoPageComponent implements OnInit {
   constructor(

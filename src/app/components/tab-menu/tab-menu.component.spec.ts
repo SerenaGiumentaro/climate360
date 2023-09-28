@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TabMenuComponent } from './tab-menu.component';
 
 describe('TabMenuComponent', () => {
@@ -8,7 +7,7 @@ describe('TabMenuComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TabMenuComponent]
+      declarations: [TabMenuComponent],
     });
     fixture = TestBed.createComponent(TabMenuComponent);
     component = fixture.componentInstance;

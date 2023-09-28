@@ -1,4 +1,4 @@
-import { ClimateActiveData } from './ClimateActiveData';
+import { ClimateActiveData } from './types/ClimateActiveData';
 
 export default function createClimateActiveObj(
   title: string,
@@ -9,11 +9,11 @@ export default function createClimateActiveObj(
   xRange: [string | number, string | number],
   yRange: [string | number, string | number]
 ): ClimateActiveData {
-  const climateActive : ClimateActiveData = {
-    title : title,
+  const climateActive: ClimateActiveData = {
+    title: title,
     description: description,
     primary: primary,
-    graph : {
+    graph: {
       data: [
         {
           x: [],
@@ -43,7 +43,7 @@ export default function createClimateActiveObj(
           x: 1,
           y: 1,
           xanchor: 'right',
-          yanchor: 'top'
+          yanchor: 'top',
         },
         autosize: true,
         margin: {
@@ -99,7 +99,7 @@ export default function createClimateActiveObj(
           tickwidth: 2,
         },
       },
-    }
-  }
-  return climateActive
+    },
+  };
+  return climateActive;
 }

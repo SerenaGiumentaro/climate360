@@ -25,13 +25,13 @@ export class TabMenuComponent implements OnInit {
   ];
   //a cosa serve? itemsignal
   activeItem!: MenuItem;
-  itemsSignal = signal(this.items);
+  // itemsSignal = signal(this.items);
   viewport = window.innerWidth;
 
   @HostListener('window:resize', ['$event'])
   onWindowResize(event: any) {
     this.viewport = innerWidth;
-    if(innerWidth < 600) return
+    if (innerWidth < 600) return;
     this.activeDataContent.setActiveDataContent('Temperature');
     this.activeItem = this.viewport > 660 ? this.items[0] : this.mobileItems[0];
   }
@@ -40,6 +40,6 @@ export class TabMenuComponent implements OnInit {
   }
   changeActiveTab(event: any) {
     this.activeDataContent.setActiveDataContent(event.target);
-    this.activeItem = event
+    this.activeItem = event;
   }
 }

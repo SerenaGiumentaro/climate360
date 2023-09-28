@@ -38,15 +38,15 @@ export default interface NitrusOxideResponse {
 }
 
 export default interface PolarIceResponse {
-  error: string | null,
-  arcticData : {
-    Column1: number,
-    year: number,
-    month: number,
-    "data-type": string,
-    hemisphere : string,
-    extent: number,
-    area: number,
-    rank: number
-  }[]
+  error: string | null;
+  arcticData: {
+    Column1: number;
+    year: number;
+    month: number;
+    'data-type': string;
+    hemisphere: string;
+    extent: number;
+    area: number;
+    rank: number;
+  }[];
 }
