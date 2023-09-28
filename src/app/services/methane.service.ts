@@ -39,6 +39,7 @@ export class MethaneService {
     return defer(() => {
       return this.getMethaneDataAPI().pipe(
         map((res: MethaneResponse) => {
+         
           this.methaneData.graph.data[0].x = res.methane
             .slice(1)
             .map(

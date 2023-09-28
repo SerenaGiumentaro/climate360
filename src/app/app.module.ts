@@ -15,13 +15,15 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { ClimateInfoPageComponent } from './components/climate-info-page/climate-info-page.component';
 import { SkeletonModule } from 'primeng/skeleton';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { LogoContainerComponent } from './components/logo-container/logo-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TabMenuComponent,
     ChartComponent,
-    ClimateInfoPageComponent
+    ClimateInfoPageComponent,
+    LogoContainerComponent
   ],
   imports: [
     BrowserModule,
