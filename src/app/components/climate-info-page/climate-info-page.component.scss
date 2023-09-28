@@ -14,6 +14,9 @@ h1{
   padding: 1rem 0;
 }
 
-app-chart{
-  padding: 5rem;
+
+@media screen and (max-width: 660px) {
+  .info{
+    padding: 0 2rem;
+  }
 }
