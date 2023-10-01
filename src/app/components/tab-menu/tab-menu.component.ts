@@ -23,9 +23,8 @@ export class TabMenuComponent implements OnInit {
     { label: 'No2', target: 'Nitrus Oxide' },
     { label: '', icon: 'fa-regular fa-snowflake', target: 'Polar Ice' },
   ];
-  //a cosa serve? itemsignal
+  
   activeItem!: MenuItem;
-  // itemsSignal = signal(this.items);
   viewport = window.innerWidth;
 
   @HostListener('window:resize', ['$event'])

@@ -5,8 +5,8 @@
     <h1>{{ activeClimateInfo.title }}</h1>
     <p [innerHTML]="activeClimateInfo.description"></p>
   </div>
+  <footer class="footer">Created by Serena Giumentaro © 2023</footer>
 </div>
-
 <div *ngIf="isLoading" class="loader">
   <p-progressSpinner
     styleClass="loading-spinner"

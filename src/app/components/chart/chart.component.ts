@@ -1,6 +1,6 @@
 import { Component, OnInit, effect } from '@angular/core';
 import { ActiveContentDataService } from 'src/app/services/active-content-data.service';
-import { Graph } from 'src/graph';
+import { Graph } from 'src/types/graph';
 
 @Component({
   selector: 'app-chart',

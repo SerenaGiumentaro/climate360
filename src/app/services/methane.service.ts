@@ -59,6 +59,4 @@ export class MethaneService {
     return this.http.get<MethaneResponse>(`${APIurls.methane}`);
   }
 }
-function thrwError(arg0: () => any): any {
-  throw new Error('Function not implemented.');
-}
+

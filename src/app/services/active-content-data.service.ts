@@ -41,7 +41,6 @@ export class ActiveContentDataService {
             this.isLoading.set(false);
             this.activeContent.set(data);
           },
-
           error: (err) =>
             console.error(`Error retrieving Temperature Data: ${err.message}`),
         });

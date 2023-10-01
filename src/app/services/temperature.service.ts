@@ -35,6 +35,7 @@ export class TemperatureService {
     ['1880', '2024'],
     [-1.5, 2]
   );
+  
   getTemperatureData(): Observable<ClimateActiveData> {
     return defer(() => {
       return this.getTemperatureDataAPI().pipe(
